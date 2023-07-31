@@ -1,40 +1,42 @@
 ---
-title: Input组件
+title: Input 输入框
 nav:
-  title: 通用
+  title: Form 表单组件
   path: /component
 group:
-  path: /component
+  path: /form
 ---
 
 # Input 输入框
 
-通过鼠标或键盘输入字符
+基本表单组件，支持 input 和 textarea，并在原生控件基础上进行了功能扩展，可以组合使用。
 
-#### 何时使用
+### 基本用法
 
-输入框组件
+> Input 组件 基本用法
 
-## 基本使用
+<code src='./demo/index1.tsx' />
 
-<code src="./demo/index1.tsx" />
+### 密码框
 
-## 不同状态
+> 通过设置 type 控制输入框类型
 
-<code src="./demo/index2.tsx" />
+<code src='./demo/index3.tsx' />
 
-## 不同尺寸
+### 按钮禁用
 
-<code src="./demo/index3.tsx" />
+> 设置 disabled 控制输入框是否禁用
 
+<code src='./demo/index2.tsx' />
 
-## 密码框
+### 输入框边框
 
-<code src="./demo/index4.tsx" />
+> inputBorder 可以设置输入时是否显示边框 bordered 可以设置是否显示边框 <code src='./demo/index5.tsx' />
 
-## 文本域
+### 自定义事件
 
-<code src="./demo/index5.tsx" />
+> 通过给 handleChange 绑定自定义事件 <code src='./demo/index4.tsx' />
 
+### Input 参数说明
 
-<API/>
+<API>

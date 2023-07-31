@@ -1,18 +1,11 @@
 import React from 'react';
-// import Switch from './Switch.css';
-import Switch from '..';
+import Switch from '../index';
 
-const App: React.FC = () => {
-  const handleClick = (isOn: boolean) => {
-    console.log(`Switch is ${isOn ? 'on' : 'off'}`);
-  };
-
+export default function SwitchDemo1() {
   return (
-    <div>
-      <h1>Switch Example</h1>
-      <Switch isOn onClick={handleClick} />
+    <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+      <Switch />
+      <Switch value={true} />
     </div>
   );
-};
-
-export default App;
+}

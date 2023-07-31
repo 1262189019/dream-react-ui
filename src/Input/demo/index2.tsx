@@ -1,12 +1,10 @@
 import React from 'react';
-import Input from '../index';
+import Input from '..';
 
-export default function InputDemo1() {
+export default function index2() {
   return (
-    <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-     <Input  status="error" placeholder='error status' />
-      <Input status='warning' placeholder='warning status' />
-      <Input disabled placeholder='disabled input' />
+    <div>
+      <Input defaultValue="禁用" disabled={true} />
     </div>
   );
 }

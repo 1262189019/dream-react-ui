@@ -1,12 +1,10 @@
 import React from 'react';
-import Input from '../index';
+import Input from '..';
 
-export default function InputDemo1() {
+export default function index5() {
   return (
-    <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-      <Input  type="textarea" rows={3} placeholder="请输入内容">
-          
-      </Input>
+    <div>
+      <Input bordered={true} defaultValue="输入框边框" />
     </div>
   );
 }

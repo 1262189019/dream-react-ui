@@ -1,3 +1,13 @@
-export { default as Foo } from './Foo';
 export { default as Button } from './Button';
-export { default as Font } from './Font';
+export { default as Link } from './Link';
+export { default as Radio } from './Switch';
+export { default as InputNumder } from './InputNumber';
+export { default as MessageBox } from './MessageBox';
+export { default as Input } from './Input';
+export { default as Tabs } from './Tabs/Tabs';
+export { default as TabPane } from './Tabs/TabPane';
+export { default as CheckboxAll } from './Checkbox/CheckboxAll';
+export { default as CheckboxGroup } from './Checkbox/CheckboxGroup';
+export { default as Card } from './Card';
+export { default as Pagination } from './Pagination';
+export { default as Backtop } from './Backtop';

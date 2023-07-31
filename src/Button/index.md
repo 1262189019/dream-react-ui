@@ -1,35 +1,52 @@
 ---
-title: Button组件
+title: Button按钮
 nav:
-  title: 通用
+  title: Basic 基础组件
   path: /component
 group:
-  path: /component
+  path: /basic
 ---
 
-# Button 按钮
+# Buttoon 按钮
 
-按钮用于开始一个即时操作。
+> 常用的 button 按钮
 
-#### 何时使用
+### 基础用法
 
-<p>标记了一个（或封装一组）操作命令，响应用户点击行为，触发相应的业务逻辑。</p>
-<p></p>
-<p>在 React View UI 中我们提供了六种按钮。</p>
-
-- 状态颜色改变的主题按钮
-- 不同尺寸的按钮
-- 圆形字体按钮
-- 禁用状态按钮
-- 虚线按钮
-- 加载状态按钮
-
-## 基本使用
+> 基本使用 button 组件用法
 
 <code src="./demo/index1.tsx" />
 
-## 不同尺寸
+### 设置宽高
+
+> 可以通过设置 width 和 height 设置按钮宽高
 
 <code src="./demo/index2.tsx" />
 
-<API></API>
+### 设置圆角
+
+> 可以通过设置 radius 设置按钮圆角
+
+<code src="./demo/index3.tsx" />
+
+### 文本按钮
+
+> 可以通过设置 radius 设置按钮圆角
+
+<code src="./demo/index4.tsx" />
+
+### 禁用按钮
+
+> 可以通过设置 forbidden 设置按钮状态
+
+<code src="./demo/index5.tsx" />
+
+### 设置事件
+
+> 可以通过设置 handleClick 绑定自定义事件
+
+<code src="./demo/index6.tsx" />
+
+### button 参数说明
+
+<API />

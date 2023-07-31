@@ -1,21 +1,10 @@
 import React from 'react';
-import Input from '../index';
+import Input from '..';
 
-export default function InputDemo1() {
+export default function InputDemo3() {
   return (
-    <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-      <Input size='small' placeholder='small'>
-          
-      </Input>
-
-      <Input size='medium' placeholder='medium'>
-            
-      </Input>
-
-
-      <Input size='large' placeholder='large'>
-            
-      </Input>
+    <div>
+      <Input type={'password'} defaultValue="请输入密码"></Input>
     </div>
   );
 }

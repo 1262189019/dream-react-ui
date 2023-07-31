@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import './Button.module.less';
-import { ButtonProps, NativeButtonProps } from './interface';
-declare const Button: FC<ButtonProps & NativeButtonProps>;
+import { ButtonProps } from './interface';
+declare const Button: FC<ButtonProps>;
 export default Button;

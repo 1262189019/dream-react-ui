@@ -1,49 +1,31 @@
 export interface ButtonProps {
-  // 要想文档中有 api 必须这么写注释.
   /**
-   * @description 按钮主题
+   * @description 按钮类型 可选值 primary / danger / warning / success /info / text
    * @default primary
    */
-  type?: String;
+  type?: string;
   /**
    * @description 宽度
+   * @default 100px
    */
-  width?: Number;
+  width?: any;
   /**
    * @description 高度
+   * @default 45px
    */
-  height?: Number;
+  height?: any;
   /**
-   * @description 禁用状态
+   * @description 圆角
+   */
+  radius?: any;
+  /**
+   * @description 自定义点击事件
+   */
+  handleClick?: Function;
+  /**
+   * @description 禁用
    * @default false
    */
-  disabled?: Boolean;
-  /**
-   * @description 字体按钮
-   * @default false
-   */
-  circle?: Boolean;
-  /**
-   * @description 按钮边框为虚线
-   * @default false
-   */
-  dashed?: Boolean;
-  /**
-   * @description 加载状态
-   * @default false
-   */
-  loading?: Boolean;
-  /**
-   * @description 按钮点击回调事件
-   */
-  handleClick?: Function | undefined;
+  disabled?: boolean;
+  children?: any;
 }
-export interface ButtonStyle {
-  //button样式接口
-  width?: String;
-  height?: String;
-  borderRadius?: String;
-  border?: String;
-  cursor?: String;
-}
-export type NativeButtonProps = Omit<React.ButtonHTMLAttributes<HTMLElement>, 'type'>; //原生button接口
