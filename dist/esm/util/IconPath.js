@@ -1,3 +1,6 @@
+/**
+ * 动态匹配路径
+ */
 function importAllIcons() {
   var icons = {};
   var requireIcon = require.context(

@@ -143,7 +143,7 @@ var NavMenu = /*#__PURE__*/ memo(function (props) {
     {
       className: Css['NavMenu'],
       style: {
-        width: menuWidth ? menuWidth : null,
+        width: menuWidth ? menuWidth : '',
       },
     },
     html(data, css, lis),

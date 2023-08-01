@@ -1,5 +1,7 @@
 import React from 'react';
-import icons from '../util/IconPath';
+// import icons from '../util/IconPath';
+// 解决兼容性
+import icons from '../util/iconPathCompatible';
 var Icon = function Icon(_ref) {
   var name = _ref.name,
     size = _ref.size,

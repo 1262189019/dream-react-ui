@@ -1,7 +1,7 @@
 {
   "private": false,
-  "name": "dream",
-  "version": "1.0.0",
+  "name": "dream-react-ui",
+  "version": "1.0.8",
   "description": "An interesting package",
   "scripts": {
     "start": "dumi dev",
