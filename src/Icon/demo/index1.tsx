@@ -1,6 +1,6 @@
 import React from 'react';
 import Icon from '../index';
-import icons from '../../util/IconPath';
+import icons from '../../util/iconPathCompatible';
 export default function IconDemo1() {
   let iconNames = [];
   for (const key in icons) {

@@ -18,4 +18,4 @@ export interface RowProps {
   children?: any;
 }
 
-export type NativeRowProps = Omit<React.RowHTMLAttributes<HTMLElement>, 'type'>;
+export type NativeRowProps = Omit<React.HTMLAttributes<HTMLElement>, 'type'>;

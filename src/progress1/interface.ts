@@ -25,13 +25,13 @@ export interface Progress {
   /**
    * @description 进度条当前状态
    */
-  status?: String;
+  status?: any;
 
   /**
    * @description 进度条背景色（会覆盖 status 状态颜色）
    * @default ""
    */
-  color?: String;
+  color?: any;
 
   /**
    * @description 更改进度条的高度

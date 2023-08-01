@@ -4,7 +4,7 @@ import { NavMenuProps, NativeNavMenuProps } from './interface';
 import Icon from '../Icon';
 const NavMenu: FC<NavMenuProps & NativeNavMenuProps> = memo((props) => {
   let { mode, data, menuWidth } = props;
-  let lis = useRef();
+  let lis: any = useRef();
   mode = mode ? mode : 'vertical';
 
   useEffect(() => {
@@ -122,7 +122,7 @@ const NavMenu: FC<NavMenuProps & NativeNavMenuProps> = memo((props) => {
   }
 
   return (
-    <div className={Css['NavMenu']} style={{ width: menuWidth ? menuWidth : null }}>
+    <div className={Css['NavMenu']} style={{ width: menuWidth ? menuWidth : '' }}>
       {html(data, css, lis)}
     </div>
   );

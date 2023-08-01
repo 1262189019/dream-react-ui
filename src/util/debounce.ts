@@ -4,11 +4,11 @@
  * @param delay 延迟时间
  * @returns
  */
-function debounce(func: Function, delay: number): Function {
-  let timer: number;
-  return function (...args: any[]) {
+function debounce(func: any, delay: any): any {
+  let timer: any;
+  return (...args: any[]) => {
     clearTimeout(timer);
-    timer = setTimeout(() => {
+    timer = setTimeout(function (this: any) {
       func.apply(this, args);
     }, delay);
   };

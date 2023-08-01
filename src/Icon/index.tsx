@@ -1,6 +1,8 @@
 import React, { FC, memo } from 'react';
-import icons from '../util/IconPath';
 import { IconProps } from './interface';
+// import icons from '../util/IconPath';
+// 解决兼容性
+import icons from '../util/iconPathCompatible';
 
 const Icon: FC<IconProps> = ({ name, size, path, className }) => {
   let style = {

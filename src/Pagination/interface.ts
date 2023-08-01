@@ -22,7 +22,7 @@ export interface PaginationProps {
   /**
    * @description 获取当前页数
    */
-  handleClick?: Function;
+  handleClick?: any;
   /**
    * @description 是否显示总页面数
    */

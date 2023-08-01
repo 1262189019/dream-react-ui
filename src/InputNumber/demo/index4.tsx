@@ -1,15 +1,15 @@
 import React from 'react';
 import InputNumber from '../index';
 export default function InputNumberDemo1() {
-  const blur = (value) => {
+  const blur = (value: any) => {
     console.log(value);
   };
 
-  const focus = (value) => {
+  const focus = (value: any) => {
     console.log(value);
   };
 
-  const change = (value) => {
+  const change = (value: any) => {
     console.log(value);
   };
   return (
