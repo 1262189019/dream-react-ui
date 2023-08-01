@@ -50,7 +50,7 @@ export default defineConfig({
       children: [
         {
           title: 'CSDN',
-          path: '',
+          path: 'https://blog.csdn.net/m0_64738079?type=blog',
         },
         {
           title: '掘金',
@@ -60,7 +60,7 @@ export default defineConfig({
     },
     {
       title: 'GitHub',
-      path: 'https://github.com/yq979292/cimi-react',
+      path: 'https://github.com/1262189019?tab=repositories',
     },
   ],
 });
