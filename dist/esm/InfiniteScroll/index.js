@@ -95,7 +95,7 @@ var InfiniteScroll = /*#__PURE__*/ memo(function (_ref) {
     infiniteScrollImmediate = _ref.infiniteScrollImmediate;
   infiniteScrollDisabled = infiniteScrollDisabled ? infiniteScrollDisabled : false;
   infiniteScrollDelay = infiniteScrollDelay ? infiniteScrollDelay : 200;
-  var infinit = infiniteScrollDistance ? infiniteScrollDistance : 0;
+  infiniteScrollDistance = infiniteScrollDistance ? infiniteScrollDistance : 0;
   infiniteScrollImmediate = infiniteScrollImmediate ? infiniteScrollImmediate : true;
 
   // 全局
@@ -116,7 +116,7 @@ var InfiniteScroll = /*#__PURE__*/ memo(function (_ref) {
     var top = e.target.scrollTop;
     var height = e.target.offsetHeight;
     var heightSum = e.target.children[0].offsetHeight;
-    if (top + height >= heightSum - infinit) {
+    if (top + height >= heightSum - infiniteScrollDistance) {
       if (infiniteScrollImmediate) {
         var newArr = getlist(2);
         var arr = [].concat(_toConsumableArray(list), _toConsumableArray(newArr));

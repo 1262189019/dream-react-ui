@@ -7,12 +7,13 @@
 function debounce(func, delay) {
   var timer;
   return function () {
+    var _this = this;
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
     clearTimeout(timer);
     timer = setTimeout(function () {
-      func.apply(this, args);
+      func.apply(_this, args);
     }, delay);
   };
 }

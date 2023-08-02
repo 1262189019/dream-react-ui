@@ -2,11 +2,6 @@ import React from 'react';
 import Icon from '../index';
 import icons from '../../util/iconPathCompatible';
 export default function IconDemo1() {
-  let iconNames = [];
-  for (const key in icons) {
-    iconNames.push(key);
-  }
-
   return (
     <div
       style={{
@@ -16,7 +11,7 @@ export default function IconDemo1() {
         justifyContent: 'space-between',
       }}
     >
-      {iconNames.map((item, index) => {
+      {icons.map((item: any, index: any) => {
         return (
           <div
             style={{
@@ -27,7 +22,7 @@ export default function IconDemo1() {
               marginBottom: '10px',
             }}
           >
-            <Icon key={index} name={item} size={20} />
+            <Icon key={index} name={item} />
             <p style={{ fontSize: '12px', userSelect: 'all' }}>{item}</p>
           </div>
         );

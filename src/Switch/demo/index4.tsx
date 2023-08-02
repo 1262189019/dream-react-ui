@@ -2,7 +2,7 @@ import React from 'react';
 import Switch from '../index';
 
 export default function SwitchDemo2() {
-  const handle = (state: any) => {
+  const handle = (state) => {
     alert(state.value);
   };
   return (

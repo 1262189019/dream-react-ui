@@ -4,4 +4,4 @@
  * @param delay 延迟时间
  * @returns
  */
-declare function debounce(func: any, delay: any): any;
+declare function debounce(func: Function, delay: number): Function;

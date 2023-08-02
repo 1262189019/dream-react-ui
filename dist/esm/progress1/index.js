@@ -50,13 +50,13 @@ var Prog = function Prog(_ref) {
         },
         /*#__PURE__*/ React.createElement('path', {
           className: style.bgCircle,
-          d: 'M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831',
+          d: 'M18 2.0845\r a 15.9155 15.9155 0 0 1 0 31.831\r a 15.9155 15.9155 0 0 1 0 -31.831',
           stroke: color ? color : 'rgb(32, 160, 255)',
         }),
         /*#__PURE__*/ React.createElement('path', {
           className: style.fillCircle,
           strokeDasharray: ''.concat(percentage, ' 100'),
-          d: 'M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831',
+          d: 'M18 2.0845\r a 15.9155 15.9155 0 0 1 0 31.831\r a 15.9155 15.9155 0 0 1 0 -31.831',
         }),
       ),
       inside &&

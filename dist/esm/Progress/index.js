@@ -5,19 +5,6 @@ var Progress = /*#__PURE__*/ memo(function (props) {
     strokeColor = props.strokeColor,
     status = props.status,
     showInfo = props.showInfo;
-  console.log(props);
-  console.log(css);
-
-  // const newPercent = useMemo(()=>{
-  //     if(percent){
-  //       percent =  percent + "%"
-  //    }
-  //    if(status && status === 'fail'){
-  //     return <CloseOutlined />
-  // }
-  //     return percent
-
-  // },[percent])
   var statusStyle = useMemo(
     function () {
       var size = {
@@ -59,7 +46,6 @@ var Progress = /*#__PURE__*/ memo(function (props) {
     },
     [status, percent],
   );
-  console.log(status === 'active' ? css['line_bg_show'] : css['line_bg']);
   return /*#__PURE__*/ React.createElement(
     'div',
     {
@@ -68,7 +54,7 @@ var Progress = /*#__PURE__*/ memo(function (props) {
     /*#__PURE__*/ React.createElement(
       'div',
       {
-        className: css.line_outer,
+        className: css['line_outer'],
       },
       /*#__PURE__*/ React.createElement(
         'div',
@@ -84,12 +70,12 @@ var Progress = /*#__PURE__*/ memo(function (props) {
     /*#__PURE__*/ React.createElement(
       'div',
       {
-        className: css.line_info,
+        className: css['line_info'],
       },
       /*#__PURE__*/ React.createElement(
         'span',
         {
-          className: css.line_info_status,
+          className: css['line_info_status'],
         },
         statusStyle.num,
       ),

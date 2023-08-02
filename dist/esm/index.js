@@ -1,5 +1,6 @@
 export { default as Avatar } from './Avatar';
 export { default as Backtop } from './Backtop';
+export { default as Breadcrumb } from './Breadcrumb';
 export { default as Button } from './Button';
 export { default as Card } from './Card';
 export { default as Carousel } from './Carousel/Carousel';
@@ -30,4 +31,3 @@ export { default as Switch } from './Switch';
 export { default as Table } from './Table';
 export { default as Tabs } from './Tabs/Tabs';
 export { default as TabPane } from './Tabs/TabPane';
-export { default as Tab } from './Tab';

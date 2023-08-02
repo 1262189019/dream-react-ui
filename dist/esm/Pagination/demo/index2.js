@@ -11,9 +11,7 @@ export default function Pagination2() {
       total: 100,
       showSumPage: true,
       defaultCurrent: 0,
-      handleClick: {
-        abc: abc,
-      },
+      handleClick: abc(),
       go: true,
     }),
   );

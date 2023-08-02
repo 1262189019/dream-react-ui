@@ -15,5 +15,9 @@ export interface IconProps {
    * @description 自定义类名
    */
   className?: any;
+  /**
+   * @description 设置白色
+   */
+  color?: string;
   children?: any;
 }

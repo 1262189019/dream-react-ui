@@ -1,15 +1,15 @@
 import React from 'react';
-// import icons from '../util/IconPath';
-// 解决兼容性
-import icons from '../util/iconPathCompatible';
+import Css from './index.module.less';
+import './icons';
 var Icon = function Icon(_ref) {
   var name = _ref.name,
     size = _ref.size,
-    path = _ref.path,
+    color = _ref.color,
     className = _ref.className;
   var style = {
     width: '16px',
     height: '16px',
+    filter: color ? 'brightness(0) invert(1)' : '',
   };
   if (size) {
     if (typeof size === 'string') {
@@ -22,26 +22,20 @@ var Icon = function Icon(_ref) {
       style.height = size + 'px';
     }
   }
-  if (path) {
-    return /*#__PURE__*/ React.createElement('img', {
-      src: path,
-      className: className ? className : '',
-      style: style,
-      alt: 'Icon',
-    });
-  }
-  if (Object.keys(icons).includes(name)) {
-    return /*#__PURE__*/ React.createElement(
-      React.Fragment,
-      null,
-      /*#__PURE__*/ React.createElement('img', {
-        src: icons[name],
-        className: className ? className : '',
+  return /*#__PURE__*/ React.createElement(
+    React.Fragment,
+    null,
+    /*#__PURE__*/ React.createElement(
+      'svg',
+      {
+        className: [Css['icon'], className].join(' '),
+        'aria-hidden': 'true',
         style: style,
-        alt: 'Icon',
+      },
+      /*#__PURE__*/ React.createElement('use', {
+        xlinkHref: '#icon-' + name,
       }),
-    );
-  }
-  return null;
+    ),
+  );
 };
 export default Icon;

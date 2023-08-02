@@ -2,10 +2,6 @@ import React from 'react';
 import Icon from '../index';
 import icons from '../../util/iconPathCompatible';
 export default function IconDemo1() {
-  var iconNames = [];
-  for (var key in icons) {
-    iconNames.push(key);
-  }
   return /*#__PURE__*/ React.createElement(
     'div',
     {
@@ -16,7 +12,7 @@ export default function IconDemo1() {
         justifyContent: 'space-between',
       },
     },
-    iconNames.map(function (item, index) {
+    icons.map(function (item, index) {
       return /*#__PURE__*/ React.createElement(
         'div',
         {
@@ -31,7 +27,6 @@ export default function IconDemo1() {
         /*#__PURE__*/ React.createElement(Icon, {
           key: index,
           name: item,
-          size: 20,
         }),
         /*#__PURE__*/ React.createElement(
           'p',

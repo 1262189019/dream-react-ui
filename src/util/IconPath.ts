@@ -17,5 +17,6 @@ function importAllIcons() {
 }
 
 const icons = importAllIcons();
+console.log(icons);
 
 export default icons;

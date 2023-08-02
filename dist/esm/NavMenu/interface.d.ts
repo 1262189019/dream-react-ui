@@ -10,7 +10,7 @@ export interface NavMenuProps {
   /**
    * @description 设置宽度
    */
-  menuWidth?: string;
+  menuWidth?: String;
   /**
    * @description 是否禁用
    * @default false

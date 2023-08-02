@@ -11,7 +11,7 @@ const InfiniteScroll: FC<InfiniteScrollProps> = memo(
   }) => {
     infiniteScrollDisabled = infiniteScrollDisabled ? infiniteScrollDisabled : false;
     infiniteScrollDelay = infiniteScrollDelay ? infiniteScrollDelay : 200;
-    let infinit = infiniteScrollDistance ? infiniteScrollDistance : 0;
+    infiniteScrollDistance = infiniteScrollDistance ? infiniteScrollDistance : 0;
     infiniteScrollImmediate = infiniteScrollImmediate ? infiniteScrollImmediate : true;
 
     // 全局
@@ -32,7 +32,7 @@ const InfiniteScroll: FC<InfiniteScrollProps> = memo(
       let height = e.target.offsetHeight;
       let heightSum = e.target.children[0].offsetHeight;
 
-      if (top + height >= heightSum - infinit) {
+      if (top + height >= heightSum - infiniteScrollDistance) {
         if (infiniteScrollImmediate) {
           let newArr = getlist(2);
           let arr = [...list, ...newArr];
