@@ -1,15 +1,17 @@
 import React from 'react';
-import Input from '..';
-export default function InputDemo4() {
+import Input from '../index';
+export default function InputDemo1() {
   return /*#__PURE__*/ React.createElement(
     'div',
-    null,
-    /*#__PURE__*/ React.createElement(Input, {
-      defaultValue: '\u81EA\u5B9A\u4E49\u4E8B\u4EF6',
-      handleChange: function handleChange(_ref) {
-        var value = _ref.value;
-        console.log(value);
+    {
+      style: {
+        display: 'flex',
+        justifyContent: 'space-around',
       },
+    },
+    /*#__PURE__*/ React.createElement(Input, {
+      type: 'password',
+      placeholder: '\u8BF7\u8F93\u5165\u5BC6\u7801',
     }),
   );
 }

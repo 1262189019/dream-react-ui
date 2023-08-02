@@ -1,10 +1,10 @@
 import React from 'react';
-import Input from '..';
+import Input from '../index';
 
 export default function InputDemo1() {
   return (
-    <div>
-      <Input />
+    <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+      <Input placeholder="Basic usage"></Input>
     </div>
   );
 }

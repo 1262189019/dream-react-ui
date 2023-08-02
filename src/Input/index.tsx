@@ -1,71 +1,80 @@
-import React, { useMemo, FC, memo } from 'react';
-import Css from './index.module.less';
-import { InputProps } from './interface';
-const Input: FC<InputProps> = memo(
-  ({
+import React, { FC, useMemo, memo } from 'react';
+import { InputProps, NativeInputProps, InputStyle } from './interface';
+import './Input.module.less';
+
+const Input: FC<InputProps & NativeInputProps> = memo((props) => {
+  const {
     type,
-    width,
-    height,
-    bordered,
-    defaultValue,
-    value,
+    size,
     disabled,
-    inputBorder,
-    handleChange,
-    handleBlur,
-    handleFcus,
-  }) => {
-    let style = {
-      width: '120px',
-      height: '34px',
-    };
+    placeholder,
+    value,
+    onChange,
+    status,
+    inputBotton,
+    inputColor,
+    rows,
+  } = props;
 
-    if (width) {
-      if (typeof width === 'string') {
-        if (width.includes('%') || width.includes('px')) {
-          style.width = width;
-        }
-      } else if (width * 1) {
-        style.width = width + 'px';
-      }
+  const inputType = useMemo(() => {
+    if (!type && type !== 'sumbit') {
+      return 'text';
     }
+    return type as any;
+  }, [type]);
 
-    if (height) {
-      if (typeof height === 'string') {
-        if (height.includes('%') || height.includes('px')) {
-          style.height = height;
-        }
-      } else if (height * 1) {
-        style.height = height + 'px';
-      }
-    }
+  const style = useMemo(() => getSizeStyle(size, status), [size, status]);
 
-    let className: any = [
-      !bordered ? Css['bordered'] : '',
-      !inputBorder ? Css['inputBorder'] : '',
-      disabled ? Css['disabled'] : '',
-    ].join(' ');
-
-    return (
-      <div className={Css['input']}>
-        <input
-          type={type ? type : 'text'}
-          placeholder={defaultValue ? defaultValue : '请输入内容'}
-          disabled={disabled}
-          className={className}
+  return (
+    <div className="input">
+      <span>{props.children}</span>
+      {inputType === 'textarea' ? (
+        <textarea
+          className={disabled ? 'disabled' : 'input-react'}
           style={style}
-          value={value ? value : ''}
-          onChange={(e) => (handleChange ? handleChange({ value: e.currentTarget.value }) : null)}
-          onBlur={(e) => {
-            handleBlur ? handleBlur({ value: e.currentTarget.value }) : null;
-          }}
-          onFocus={(e) => {
-            handleFcus ? handleFcus({ value: e.currentTarget.value }) : null;
-          }}
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+          disabled={disabled}
+          rows={rows}
         />
-      </div>
-    );
-  },
-);
+      ) : (
+        <input
+          className={disabled ? 'disabled' : 'input-react'}
+          style={style}
+          type={inputType as any}
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+          disabled={disabled}
+        />
+      )}
+    </div>
+  );
+});
+
+const getSizeStyle = (size: string | undefined, status: string | undefined) => {
+  const sizes: Record<string, string> = {
+    small: '150px',
+    medium: '200px',
+    large: '250px',
+  };
+
+  const statuses: Record<string, string> = {
+    error: 'red',
+    warning: 'yellow',
+  };
+
+  const defaultSize = sizes.medium;
+  const defaultColor = 'white'; // 默认背景颜色
+
+  // 根据状态设置背景颜色
+  const backgroundColor = status ? statuses[status] || defaultColor : defaultColor;
+  const widthsize = size ? sizes[size] || defaultSize : defaultSize;
+  return {
+    width: widthsize,
+    backgroundColor: backgroundColor,
+  };
+};
 
 export default Input;

@@ -1,15 +1,10 @@
 import React from 'react';
-import Input from '..';
+import Input from '../index';
 
-export default function InputDemo4() {
+export default function InputDemo1() {
   return (
-    <div>
-      <Input
-        defaultValue="自定义事件"
-        handleChange={({ value }: any) => {
-          console.log(value);
-        }}
-      ></Input>
+    <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+      <Input type="password" placeholder="请输入密码"></Input>
     </div>
   );
 }

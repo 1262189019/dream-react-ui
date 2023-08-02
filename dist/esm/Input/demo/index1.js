@@ -1,9 +1,16 @@
 import React from 'react';
-import Input from '..';
+import Input from '../index';
 export default function InputDemo1() {
   return /*#__PURE__*/ React.createElement(
     'div',
-    null,
-    /*#__PURE__*/ React.createElement(Input, null),
+    {
+      style: {
+        display: 'flex',
+        justifyContent: 'space-around',
+      },
+    },
+    /*#__PURE__*/ React.createElement(Input, {
+      placeholder: 'Basic usage',
+    }),
   );
 }

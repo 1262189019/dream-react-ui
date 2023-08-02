@@ -1,2 +1,2 @@
 import React from 'react';
-export default function InputDemo4(): React.JSX.Element;
+export default function InputDemo1(): React.JSX.Element;

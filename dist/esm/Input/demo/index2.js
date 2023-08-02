@@ -1,12 +1,25 @@
 import React from 'react';
-import Input from '..';
-export default function index2() {
+import Input from '../index';
+export default function InputDemo1() {
   return /*#__PURE__*/ React.createElement(
     'div',
-    null,
+    {
+      style: {
+        display: 'flex',
+        justifyContent: 'space-around',
+      },
+    },
     /*#__PURE__*/ React.createElement(Input, {
-      defaultValue: '\u7981\u7528',
+      status: 'error',
+      placeholder: 'error status',
+    }),
+    /*#__PURE__*/ React.createElement(Input, {
+      status: 'warning',
+      placeholder: 'warning status',
+    }),
+    /*#__PURE__*/ React.createElement(Input, {
       disabled: true,
+      placeholder: 'disabled input',
     }),
   );
 }

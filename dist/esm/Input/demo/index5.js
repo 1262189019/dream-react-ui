@@ -1,12 +1,18 @@
 import React from 'react';
-import Input from '..';
-export default function index5() {
+import Input from '../index';
+export default function InputDemo1() {
   return /*#__PURE__*/ React.createElement(
     'div',
-    null,
+    {
+      style: {
+        display: 'flex',
+        justifyContent: 'space-around',
+      },
+    },
     /*#__PURE__*/ React.createElement(Input, {
-      bordered: true,
-      defaultValue: '\u8F93\u5165\u6846\u8FB9\u6846',
+      type: 'textarea',
+      rows: 3,
+      placeholder: '\u8BF7\u8F93\u5165\u5185\u5BB9',
     }),
   );
 }

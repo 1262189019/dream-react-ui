@@ -1,78 +1,77 @@
-import React, { memo } from 'react';
-import Css from './index.module.less';
-var Input = /*#__PURE__*/ memo(function (_ref) {
-  var type = _ref.type,
-    width = _ref.width,
-    height = _ref.height,
-    bordered = _ref.bordered,
-    defaultValue = _ref.defaultValue,
-    value = _ref.value,
-    disabled = _ref.disabled,
-    inputBorder = _ref.inputBorder,
-    handleChange = _ref.handleChange,
-    handleBlur = _ref.handleBlur,
-    handleFcus = _ref.handleFcus;
-  var style = {
-    width: '120px',
-    height: '34px',
-  };
-  if (width) {
-    if (typeof width === 'string') {
-      if (width.includes('%') || width.includes('px')) {
-        style.width = width;
+import React, { useMemo, memo } from 'react';
+import './Input.module.less';
+var Input = /*#__PURE__*/ memo(function (props) {
+  var type = props.type,
+    size = props.size,
+    disabled = props.disabled,
+    placeholder = props.placeholder,
+    value = props.value,
+    onChange = props.onChange,
+    status = props.status,
+    inputBotton = props.inputBotton,
+    inputColor = props.inputColor,
+    rows = props.rows;
+  var inputType = useMemo(
+    function () {
+      if (!type && type !== 'sumbit') {
+        return 'text';
       }
-    } else if (width * 1) {
-      style.width = width + 'px';
-    }
-  }
-  if (height) {
-    if (typeof height === 'string') {
-      if (height.includes('%') || height.includes('px')) {
-        style.height = height;
-      }
-    } else if (height * 1) {
-      style.height = height + 'px';
-    }
-  }
-  var className = [
-    !bordered ? Css['bordered'] : '',
-    !inputBorder ? Css['inputBorder'] : '',
-    disabled ? Css['disabled'] : '',
-  ].join(' ');
+      return type;
+    },
+    [type],
+  );
+  var style = useMemo(
+    function () {
+      return getSizeStyle(size, status);
+    },
+    [size, status],
+  );
   return /*#__PURE__*/ React.createElement(
     'div',
     {
-      className: Css['input'],
+      className: 'input',
     },
-    /*#__PURE__*/ React.createElement('input', {
-      type: type ? type : 'text',
-      placeholder: defaultValue ? defaultValue : '请输入内容',
-      disabled: disabled,
-      className: className,
-      style: style,
-      value: value ? value : '',
-      onChange: function onChange(e) {
-        return handleChange
-          ? handleChange({
-              value: e.currentTarget.value,
-            })
-          : null;
-      },
-      onBlur: function onBlur(e) {
-        handleBlur
-          ? handleBlur({
-              value: e.currentTarget.value,
-            })
-          : null;
-      },
-      onFocus: function onFocus(e) {
-        handleFcus
-          ? handleFcus({
-              value: e.currentTarget.value,
-            })
-          : null;
-      },
-    }),
+    /*#__PURE__*/ React.createElement('span', null, props.children),
+    inputType === 'textarea'
+      ? /*#__PURE__*/ React.createElement('textarea', {
+          className: disabled ? 'disabled' : 'input-react',
+          style: style,
+          placeholder: placeholder,
+          value: value,
+          onChange: onChange,
+          disabled: disabled,
+          rows: rows,
+        })
+      : /*#__PURE__*/ React.createElement('input', {
+          className: disabled ? 'disabled' : 'input-react',
+          style: style,
+          type: inputType,
+          placeholder: placeholder,
+          value: value,
+          onChange: onChange,
+          disabled: disabled,
+        }),
   );
 });
+var getSizeStyle = function getSizeStyle(size, status) {
+  var sizes = {
+    small: '150px',
+    medium: '200px',
+    large: '250px',
+  };
+  var statuses = {
+    error: 'red',
+    warning: 'yellow',
+  };
+  var defaultSize = sizes.medium;
+  var defaultColor = 'white'; // 默认背景颜色
+
+  // 根据状态设置背景颜色
+  var backgroundColor = status ? statuses[status] || defaultColor : defaultColor;
+  var widthsize = size ? sizes[size] || defaultSize : defaultSize;
+  return {
+    width: widthsize,
+    backgroundColor: backgroundColor,
+  };
+};
 export default Input;
